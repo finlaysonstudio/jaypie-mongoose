@@ -3,9 +3,6 @@ import { ConfigurationError, JAYPIE, moduleLogger } from "@jaypie/core";
 
 import mongoose from "mongoose";
 
-// Mongoose is CommonJS and these are not named exports
-const { connect } = mongoose;
-
 //
 //
 // Main
@@ -26,7 +23,7 @@ const connectFromSecretEnv = async (key = "SECRET_MONGODB_URI") => {
   if (!uri) throw new ConfigurationError("MONGODB_URI is undefined");
   // Let connect() throw errors if there are other problems. As far as the app is concerned the game is over
   log.trace("[jaypie] Connecting to MongoDB");
-  return connect(uri, {
+  return mongoose.connect(uri, {
     serverSelectionTimeoutMS: 5000,
   });
 };
