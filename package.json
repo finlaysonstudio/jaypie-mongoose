@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "new": "hygen jaypie vite",
     "test": "vitest",
+    "test:spec:connectFromSecretEnv.function": "vitest run ./src/__tests__/connectFromSecretEnv.function.spec.js",
     "test:spec:index": "vitest run ./src/__tests__/index.spec.js"
   },
   "dependencies": {
