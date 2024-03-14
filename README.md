@@ -85,7 +85,7 @@ const mongoose = await connectFromSecretEnv();
 * The _name_ of secret. Usually it is ugly like `MongoConnectionString37D5BF-XUCja0vKbFwa`. CDK `mongoConnectionString.secretName`
 * This name stored in an environment variable, preferably `SECRET_MONGODB_URI`. CDK `SECRET_MONGODB_URI: mongoConnectionString.secretName,` in the lambda `environment` property
 
-If this sounds like a lot think about never thinking about it again 👺
+If this sounds like a lot to think about think about never thinking about it again 👺
 
 ### `disconnect`
 
