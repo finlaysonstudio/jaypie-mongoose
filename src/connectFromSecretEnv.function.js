@@ -17,16 +17,18 @@ import mongoose from "mongoose";
  * @returns {Promise<mongoose>} resolves to `this` mongoose instance
  * @throws {ConfigurationError} if key is not found in process.env
  */
-const connectFromSecretEnv = async (key = "SECRET_MONGODB_URI") => {
-  if (!key)
+const connectFromSecretEnv = async () => {
+  if (!process || !process.env)
     throw new ConfigurationError(
-      "No `key` provided (default is SECRET_MONGODB_URI)",
+      "No process.env available to the active runtime",
     );
   const log = moduleLogger.with({ lib: JAYPIE.LIB.MONGOOSE });
 
-  const mongoConnectionString = process.env[key];
+  const mongoConnectionString = process.env.SECRET_MONGODB_URI;
   if (!mongoConnectionString) {
-    throw new ConfigurationError(`No ${key} available in process.env`);
+    throw new ConfigurationError(
+      "No SECRET_MONGODB_URI available in process.env",
+    );
   }
   const uri = await getSecret(mongoConnectionString);
   if (!uri) throw new ConfigurationError("MONGODB_URI is undefined");
