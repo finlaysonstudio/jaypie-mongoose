@@ -22,6 +22,11 @@ export { mongoose };
 // Functions
 //
 
+/**
+ * **Jaypie Handler Lifecycle -**
+ * Disconnects from MongoDB; Jaypie wrap of `mongoose.disconnect()`
+ * @returns {Promise<void>}
+ */
 export const disconnect = async () => {
   const log = moduleLogger.with({ lib: JAYPIE.LIB.MONGOOSE });
   log.trace("[jaypie] Disconnecting from MongoDB");

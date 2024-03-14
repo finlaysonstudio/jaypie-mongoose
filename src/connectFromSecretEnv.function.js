@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 //
 
 /**
+ * **Jaypie Handler Lifecycle -**
  * Use the AWS Secret named `process.env.SECRET_MONGODB_URI` to connect to Mongoose.
  * The `process.env[key]` should be the name of the AWS Secret (e.g., `"MongoConnectionString37D5BF-XUCja0vKbFwa"`)
  * The secret should contain the MongoDB connection URI.
