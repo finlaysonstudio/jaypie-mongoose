@@ -97,9 +97,13 @@ return await mongoose.disconnect();
 
 ### `mongoose`
 
-The mongoose object. Use this to interact with MongoDB.
+The `mongoose` object
 
 ```javascript
+import { mongoose } from "@jaypie/mongoose";
+
+// Honk!
+```
 
 
 ## 📝 Changelog
