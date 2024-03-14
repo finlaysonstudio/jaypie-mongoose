@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "@jaypie/aws": "^0.1.1",
-    "@jaypie/core": "^0.3.3"
+    "@jaypie/core": "^0.3.3",
+    "mongoose": "^8.2.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
