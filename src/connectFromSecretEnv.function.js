@@ -1,5 +1,5 @@
 import { getSecret } from "@jaypie/aws";
-import { ConfigurationError, JAYPIE, moduleLogger } from "@jaypie/core";
+import { ConfigurationError, JAYPIE, log } from "@jaypie/core";
 
 import mongoose from "mongoose";
 
@@ -22,7 +22,6 @@ const connectFromSecretEnv = async () => {
     throw new ConfigurationError(
       "No process.env available to the active runtime",
     );
-  const log = moduleLogger.with({ lib: JAYPIE.LIB.MONGOOSE });
 
   const mongoConnectionString = process.env.SECRET_MONGODB_URI;
   if (!mongoConnectionString) {
@@ -33,7 +32,7 @@ const connectFromSecretEnv = async () => {
   const uri = await getSecret(mongoConnectionString);
   if (!uri) throw new ConfigurationError("MONGODB_URI is undefined");
   // Let connect() throw errors if there are other problems. As far as the app is concerned the game is over
-  log.trace("[jaypie] Connecting to MongoDB");
+  log.lib({ lib: JAYPIE.LIB.MONGOOSE }).trace("[jaypie] Connecting to MongoDB");
   // https://mongoosejs.com/docs/api/mongoose.html#Mongoose.prototype.connect()
   return mongoose.connect(uri, {
     serverSelectionTimeoutMS: 5000,

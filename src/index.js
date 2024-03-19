@@ -1,4 +1,4 @@
-import { JAYPIE, moduleLogger } from "@jaypie/core";
+import { JAYPIE, log } from "@jaypie/core";
 
 import connectFromSecretEnv from "./connectFromSecretEnv.function.js";
 
@@ -28,7 +28,8 @@ export { mongoose };
  * @returns {Promise<void>}
  */
 export const disconnect = async () => {
-  const log = moduleLogger.with({ lib: JAYPIE.LIB.MONGOOSE });
-  log.trace("[jaypie] Disconnecting from MongoDB");
+  log
+    .lib({ lib: JAYPIE.LIB.MONGOOSE })
+    .trace("[jaypie] Disconnecting from MongoDB");
   return await mongoose.disconnect();
 };
