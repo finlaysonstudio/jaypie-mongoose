@@ -2,19 +2,24 @@
 
 MongoDB management for Jaypie 
 
+## 🐦‍⬛ Introduction
+
+Jaypie is an opinionated approach to application development centered around JavaScript and the JSON:API specification in an event-driven architecture.
+
 ## 📋 Usage
+
+`@jaypie/mongoose` is an optional package that should be installed alongside the main `jaypie` package.
 
 ### Installation
 
 ```bash
-npm install @jaypie/mongoose
+npm install jaypie @jaypie/mongoose
 ```
 
 ### Example
 
 ```javascript
-import { jaypieHandler } from "@jaypie/core";
-import { connectFromSecretEnv, disconnect, mongoose } from "@jaypie/mongoose";
+import { connectFromSecretEnv, disconnect, jaypieHandler, mongoose } from "jaypie";
 
 export default jaypieHandler(
   // Handler function
@@ -46,7 +51,7 @@ const {
   connectFromSecretEnv,
   disconnect,
   mongoose,
-} = require('@jaypie/mongoose');
+} = require("@jaypie/mongoose");
 ```
 
 ### `connectFromSecretEnv`
@@ -105,11 +110,12 @@ import { mongoose } from "@jaypie/mongoose";
 // Honk!
 ```
 
-
 ## 📝 Changelog
 
 | Date       | Version | Summary        |
 | ---------- | ------- | -------------- |
+|  3/19/2024 |   1.0.0 | First publish with `@jaypie/core@1.0.0` |
+|  3/14/2024 |   0.1.0 | Initial deploy |
 |  3/13/2024 |   0.0.1 | Initial commit |
 
 ## 📜 License
