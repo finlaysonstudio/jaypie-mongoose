@@ -16,8 +16,8 @@
     "test:spec:index": "vitest run ./src/__tests__/index.spec.js"
   },
   "dependencies": {
-    "@jaypie/aws": "^0.1.3",
-    "@jaypie/core": "^0.5.8",
+    "@jaypie/aws": "^1.0.0",
+    "@jaypie/core": "^1.0.0",
     "mongoose": "^8.2.2"
   },
   "devDependencies": {
