@@ -1,6 +1,6 @@
 {
   "name": "@jaypie/mongoose",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Finlayson Studio",
   "main": "dist/jaypie-mongoose.cjs.js",
   "module": "dist/jaypie-mongoose.esm.js",
