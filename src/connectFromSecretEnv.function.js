@@ -13,7 +13,6 @@ import mongoose from "mongoose";
  * Use the AWS Secret named `process.env.SECRET_MONGODB_URI` to connect to Mongoose.
  * The `process.env[key]` should be the name of the AWS Secret (e.g., `"MongoConnectionString37D5BF-XUCja0vKbFwa"`)
  * The secret should contain the MongoDB connection URI.
- * @param {string} key (optional) process.env[key] holding AWS secret name; default="SECRET_MONGODB_URI"
  * @returns {Promise<mongoose>} resolves to `this` mongoose instance
  * @throws {ConfigurationError} if key is not found in process.env
  */
