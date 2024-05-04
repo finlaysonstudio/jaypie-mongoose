@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
+import mongoose from "mongoose";
 import connectFromSecretEnv from "../connectFromSecretEnv.function.js";
 
 // Subject
@@ -10,8 +11,8 @@ import connect from "../connect.function.js";
 // Mock modules
 //
 
+vi.mock("mongoose");
 vi.mock("../connectFromSecretEnv.function.js");
-// vi.mock("module");
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -40,6 +41,16 @@ describe("Connect Function", () => {
         expect(error.isProjectError).toBeTrue();
       }
       expect.assertions(1);
+    });
+  });
+  describe("Features", () => {
+    it("Falls back on MONGODB_URI", async () => {
+      mongoose.connect.mockResolvedValue("MOCK_CONNECTION");
+      delete process.env.SECRET_MONGODB_URI;
+      process.env.MONGODB_URI = "MOCK_MONGODB_URI";
+      const response = await connect();
+      expect(response).not.toBeUndefined();
+      expect(response).toBe("MOCK_CONNECTION");
     });
   });
 });
