@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 // Subject
-import { connectFromSecretEnv } from "../index.js";
+import { connect, connectFromSecretEnv } from "../index.js";
 
 //
 //
@@ -10,6 +10,7 @@ import { connectFromSecretEnv } from "../index.js";
 
 describe("Index", () => {
   it("Works", () => {
+    expect(connect).toBeFunction();
     expect(connectFromSecretEnv).toBeFunction();
   });
 });

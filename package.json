@@ -28,6 +28,7 @@
     "new:test": "hygen jaypie vitest",
     "prepublish": "npm run build",
     "test": "vitest",
+    "test:spec:connect.function": "vitest run ./src/__tests__/connect.function.spec.js",
     "test:spec:connectFromSecretEnv.function": "vitest run ./src/__tests__/connectFromSecretEnv.function.spec.js",
     "test:spec:index": "vitest run ./src/__tests__/index.spec.js"
   },

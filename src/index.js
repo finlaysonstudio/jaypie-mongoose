@@ -1,5 +1,6 @@
 import { JAYPIE, log } from "@jaypie/core";
 
+import connect from "./connect.function.js";
 import connectFromSecretEnv from "./connectFromSecretEnv.function.js";
 
 //
@@ -7,7 +8,7 @@ import connectFromSecretEnv from "./connectFromSecretEnv.function.js";
 // Export
 //
 
-export { connectFromSecretEnv };
+export { connect, connectFromSecretEnv };
 
 //
 //
